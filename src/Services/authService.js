@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../Utils/http';
 import { getAuthHeader } from '../Utils/auth';
 
 export async function signup({ name, email, password }) {
