@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { getAuthHeader } from '../Utils/auth';
+import axios from '../utils/http';
+import { getAuthHeader } from '../utils/auth';
 
 export async function listImages() {
   const res = await axios.get('/api/images', { headers: getAuthHeader() });

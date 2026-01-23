@@ -1,9 +1,7 @@
-import axios from 'axios';
-import { getAuthHeader } from '../Utils/auth';
+import { apiClient } from '../utils/http';
+import { getAuthHeader } from '../utils/auth';
 
-const api = axios.create({
-  baseURL: '/api/chats',
-});
+const api = apiClient('/api/chats');
 
 export async function createChat(title = 'New Chat') {
   const res = await api.post('/', { title }, { headers: getAuthHeader() });

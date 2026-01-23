@@ -1,5 +1,5 @@
-import axios from '../Utils/http';
-import { getAuthHeader } from '../Utils/auth';
+import axios from '../utils/http';
+import { getAuthHeader } from '../utils/auth';
 
 export async function signup({ name, email, password }) {
   const res = await axios.post('/api/auth/signup', { name, email, password });

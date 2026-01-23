@@ -62,10 +62,10 @@ const SignupPage = () => {
         </form>
 
         <div className="mt-4 space-y-3">
-          <a href={`/api/auth/google?redirect=${encodeURIComponent(window.location.origin + '/oauth/callback')}`} className="block w-full text-center bg-red-600 hover:bg-red-700 text-white py-2 rounded">Continue with Google</a>
+          <a href={`${(import.meta?.env?.VITE_API_BASE_URL || '').replace(/\/+$/, '')}/api/auth/google?redirect=${encodeURIComponent(window.location.origin + '/oauth/callback')}`} className="block w-full text-center bg-red-600 hover:bg-red-700 text-white py-2 rounded">Continue with Google</a>
           <div className="flex items-center justify-center gap-4">
             <a
-              href={`/api/auth/github?redirect=${encodeURIComponent(window.location.origin + '/oauth/callback')}`}
+              href={`${(import.meta?.env?.VITE_API_BASE_URL || '').replace(/\/+$/, '')}/api/auth/github?redirect=${encodeURIComponent(window.location.origin + '/oauth/callback')}`}
               aria-label="Continue with GitHub"
               className="inline-flex items-center justify-center h-10 w-10 rounded-full border border-gray-300 hover:bg-gray-100"
             >
