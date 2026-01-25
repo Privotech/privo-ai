@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import LoginPage from './Pages/Login';
 import SignupPage from './Pages/Signup';
 import ChatPage from './Pages/Chat';
@@ -13,10 +13,13 @@ import HelpPage from './Pages/Help';
 import LibraryPage from './Pages/Library';
 
 function App() {
+  const location = useLocation();
+  const hideNavbar = location.pathname === '/signup' || location.pathname === '/login' || location.pathname === '/';
   return (
     <>
-      <Navbar />
+      {!hideNavbar && <Navbar />}
       <Routes>
+        <Route path="/" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/oauth/callback" element={<OAuthCallback />} />
