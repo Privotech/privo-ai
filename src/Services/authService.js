@@ -2,8 +2,13 @@ import axios from '../Utils/http';
 import { getAuthHeader } from '../Utils/auth';
 
 export async function signup({ name, email, password }) {
-  const res = await axios.post('/api/auth/signup', { name, email, password });
-  return res.data; // { ok, token, user }
+  try {
+    const res = await axios.post('/api/auth/signup', { name, email, password });
+    return res.data; // { ok, token, user }
+  } catch (e) {
+    const msg = e?.response?.data?.error || e?.message || 'Signup failed';
+    return { ok: false, error: msg };
+  }
 }
 
 export async function signin({ email, password }) {
