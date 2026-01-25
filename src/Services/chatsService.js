@@ -1,5 +1,5 @@
-import { apiClient } from '../utils/http';
-import { getAuthHeader } from '../utils/auth';
+import { apiClient } from '../Utils/http';
+import { getAuthHeader } from '../Utils/auth';
 
 const api = apiClient('/api/chats');
 
