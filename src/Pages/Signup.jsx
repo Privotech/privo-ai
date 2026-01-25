@@ -94,9 +94,9 @@ const SignupPage = () => {
           </a>
         </div>
 
-        <Link to="/login" className="block w-full text-center bg-gray-900 text-white py-2 rounded hover:bg-gray-800">
+        {/* <Link to="/login" className="block w-full text-center bg-gray-900 text-white py-2 rounded hover:bg-gray-800">
           Login
-        </Link>
+        </Link> */}
         <p className="text-sm text-center text-gray-600">
           Already have an account?{' '}
           <Link to="/login" className="font-medium text-blue-600 hover:text-blue-500">
