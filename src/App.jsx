@@ -25,11 +25,9 @@ function App() {
         <Route path="/oauth/callback" element={<OAuthCallback />} />
         <Route
           path="/chat"
-          element={(
-            <ProtectedRoute>
+          element={
               <ChatPage />
-            </ProtectedRoute>
-          )}
+          }
         />
         <Route path="/chat/:id" element={(<ProtectedRoute><ChatPage /></ProtectedRoute>)} />
         <Route path="/profile" element={(<ProtectedRoute><ProfilePage /></ProtectedRoute>)} />

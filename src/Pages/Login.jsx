@@ -23,7 +23,7 @@ const LoginPage = () => {
     setError(null);
     try {
       const res = await signin(email, password);
-      if (res.ok) navigate('/chat');
+      if (res.ok) navigate("/chat");
       else setError(res.error || 'Login failed');
     } catch (e) {
       setError('Login failed');

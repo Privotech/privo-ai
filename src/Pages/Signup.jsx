@@ -33,7 +33,7 @@ const SignupPage = () => {
     setError(null);
     try {
       const res = await signup(name, email, password);
-      if (res.ok) navigate('/chat');
+      if (res.ok) navigate("/login");
       else setError(res.error || 'Signup failed');
     } catch (e) {
       setError('Signup failed');
