@@ -14,9 +14,8 @@ API.interceptors.request.use(
     }
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
-
 
 export async function signup({ name, email, password }) {
   try {
@@ -29,14 +28,10 @@ export async function signup({ name, email, password }) {
   } catch (e) {
     return {
       ok: false,
-      error:
-        e?.response?.data?.error ||
-        e?.message ||
-        "Signup failed",
+      error: e?.response?.data?.error || e?.message || "Signup failed",
     };
   }
 }
-
 
 export async function signin({ email, password }) {
   try {
@@ -48,14 +43,10 @@ export async function signin({ email, password }) {
   } catch (e) {
     return {
       ok: false,
-      error:
-        e?.response?.data?.error ||
-        e?.message ||
-        "Login failed",
+      error: e?.response?.data?.error || e?.message || "Login failed",
     };
   }
 }
-
 
 export async function getMe() {
   try {
@@ -66,28 +57,15 @@ export async function getMe() {
   }
 }
 
-
 export async function updateMe({ name }) {
   const res = await API.put("/api/auth/me", { name });
   return res.data;
 }
-
 
 export async function changePassword({ currentPassword, newPassword }) {
   const res = await API.post("/api/auth/password", {
     currentPassword,
     newPassword,
   });
-  return res.data;
-}
-
-
-export async function updateMe({ name }) {
-  const res = await axios.put('/api/auth/me', { name }, { headers: getAuthHeader() });
-  return res.data;
-}
-
-export async function changePassword({ currentPassword, newPassword }) {
-  const res = await axios.post('/api/auth/password', { currentPassword, newPassword }, { headers: getAuthHeader() });
   return res.data;
 }
