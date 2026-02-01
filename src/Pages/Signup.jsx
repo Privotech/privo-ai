@@ -28,7 +28,7 @@ const SignupPage = () => {
     const path = `/api/auth/${provider}?redirect=${redirect}`;
     return base ? `${base}${path}` : path;
   };
-
+   
   const handleSignup = async () => {
     setError(null);
     try {
